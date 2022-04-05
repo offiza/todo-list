@@ -1,5 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
+import Task from './DbSchema/TaskSchema.js';
+import router from './Task/TaskRouter.js';
 
 const PORT = 5000;
 const DB_URL = `mongodb+srv://offiza:root@cluster0.yswtl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
@@ -7,11 +9,7 @@ const DB_URL = `mongodb+srv://offiza:root@cluster0.yswtl.mongodb.net/myFirstData
 const app = express();
 
 app.use(express.json());
-
-app.post('/', (req, res) => {
-  console.log(req.body);
-  res.status(200).json('Server working!')
-})
+app.use('/api', router)
 
 async function startApp() {
   try {
