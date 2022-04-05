@@ -10,7 +10,7 @@ export const TodoList: FC<TodoListProps> = ({ tasks }) => {
   return (
     <Box sx={{ width: 'max(50%, 900px)', border: '1px solid gray', padding: '16px', margin: 'auto', mt: '150px' }}>
       {tasks && tasks.map(task => {
-        return <Task task={task} />
+        return <Task key={task._id} task={task} />
       })}
     </Box>
   )
