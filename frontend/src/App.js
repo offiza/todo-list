@@ -2,7 +2,7 @@ import { HomePage } from "./HomePage/HomePage.tsx";
 
 function App() {
   return (
-    <div>
+    <div style={{ backgroundColor: '#fafafa'}}>
       <HomePage />
     </div>
   );

@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Box, Button, IconButton, Typography } from '@mui/material';
+import { Box, Button, Card, IconButton, Typography } from '@mui/material';
 import RemoveCircleOutlineOutlinedIcon from '@mui/icons-material/RemoveCircleOutlineOutlined';
 interface TaskProps {
   task: any;
@@ -7,7 +7,7 @@ interface TaskProps {
 
 export const Task: FC<TaskProps> = ({ task }) => {
   return (
-    <Box sx={{ border: '1px solid gray', borderRadius: '6px', width: '70%', display: 'flex', alignItems: 'center', padding: '6px', mb: '10px', justifyContent: 'space-between' }}>
+    <Card sx={{ width: '70%', display: 'flex', alignItems: 'center', padding: '6px', margin: '10px auto', justifyContent: 'space-between' }}>
       <Box >
         <Box>
           <Typography sx={{ fontSize: '18px' }}>
@@ -25,6 +25,6 @@ export const Task: FC<TaskProps> = ({ task }) => {
           <RemoveCircleOutlineOutlinedIcon />
         </IconButton>
       </Box>
-    </Box>
+    </Card>
   )
 }
