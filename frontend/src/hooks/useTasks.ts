@@ -16,8 +16,25 @@ export default function useTasks() {
       })
   }
 
+  const removeTask = async (id: string) => {
+    axios.delete(`http://localhost:5000/api/tasks/${id}`)
+      .finally(() => {
+        getTasks()
+      });
+  }
+
+  const updateTask = async (task: any) => {
+    axios
+      .put(`http://localhost:5000/api/tasks`, task)
+      .finally(() => {
+        getTasks()
+      });
+  }
+
   return {
     getTasks,
-    tasks
+    tasks,
+    removeTask,
+    updateTask
   }
 }

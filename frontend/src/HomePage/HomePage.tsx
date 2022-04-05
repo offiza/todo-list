@@ -4,9 +4,9 @@ import useTasks from '../hooks/useTasks.ts';
 import { TodoList } from '../TodoList/TodoList.tsx';
 
 export const HomePage = () => {
-  const { tasks } = useTasks();
+  const { tasks, removeTask, getTasks, updateTask } = useTasks();
 
   return (
-    <TodoList tasks={tasks} />
+    <TodoList tasks={tasks} handleRemove={removeTask} handleUpdate={updateTask}/>
   )
 }
