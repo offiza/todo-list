@@ -1,13 +1,14 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import Task from './DbSchema/TaskSchema.js';
 import router from './Task/TaskRouter.js';
+import cors from 'cors';
 
 const PORT = 5000;
 const DB_URL = `mongodb+srv://offiza:root@cluster0.yswtl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
 
 const app = express();
 
+app.use(cors())
 app.use(express.json());
 app.use('/api', router)
 
