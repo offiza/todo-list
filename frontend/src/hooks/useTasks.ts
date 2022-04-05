@@ -8,20 +8,28 @@ export default function useTasks() {
     getTasks();
   }, [])
 
+  const createTask = async (task: any) => {
+    axios
+      .post('http://localhost:5000/api/tasks', task)
+      .finally(() => {
+        getTasks()
+      });
+  };
+
   const getTasks = async () => {
     axios
       .get('http://localhost:5000/api/tasks')
       .then((response) => {
         setTasks(response.data);
       })
-  }
+  };
 
   const removeTask = async (id: string) => {
     axios.delete(`http://localhost:5000/api/tasks/${id}`)
       .finally(() => {
         getTasks()
       });
-  }
+  };
 
   const updateTask = async (task: any) => {
     axios
@@ -29,12 +37,13 @@ export default function useTasks() {
       .finally(() => {
         getTasks()
       });
-  }
+  };
 
   return {
     getTasks,
     tasks,
     removeTask,
-    updateTask
+    updateTask,
+    createTask
   }
 }

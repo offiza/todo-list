@@ -10,7 +10,7 @@ interface TodoListProps {
 
 export const TodoList: FC<TodoListProps> = ({ tasks, handleRemove, handleUpdate }) => {
   return (
-    <Box sx={{ width: 'max(50%, 900px)', padding: '16px', margin: 'auto', backgroundColor: '#fafafa' }}>
+    <Box sx={{ width: 'max(50%, 900px)', padding: '16px', margin: 'auto'}}>
       {tasks && tasks.map(task => {
         return <Task key={task._id} task={task} handleRemove={handleRemove} handleUpdate={handleUpdate} />
       })}
