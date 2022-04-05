@@ -2,9 +2,10 @@ import express from 'express';
 import mongoose from 'mongoose';
 import router from './Task/TaskRouter.js';
 import cors from 'cors';
+import 'dotenv/config';
 
-const PORT = 5000;
-const DB_URL = `mongodb+srv://offiza:root@cluster0.yswtl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
+const PORT = process.env.PORT;
+const DB_URL = process.env.DB_URL;
 
 const app = express();
 
