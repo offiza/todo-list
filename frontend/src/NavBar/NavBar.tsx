@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export const NavBar = () => {
   return (
-    <AppBar position="static">
+    <AppBar position="fixed">
       <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', p: '10px' }}>
         <Link to="/home" style={{ textDecoration: 'none', color: '#fff', width: '200px', textAlign: 'center' }}>
           <Typography variant="h6" color="inherit" component="div">

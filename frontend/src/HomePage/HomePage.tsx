@@ -5,14 +5,14 @@ import useTasks from '../hooks/useTasks.ts';
 import { TodoList } from '../TodoList/TodoList.tsx';
 
 export const HomePage = () => {
-  const { tasks, removeTask, getTasks, updateTask, createTask } = useTasks();
-
+  const { tasks, removeTask, getTasks, updateTask, createTask, error } = useTasks();
+  console.log(error);
   return (
     <Box>
       <Box sx={{margin: 'auto', textAlign: 'center', padding: '40px'}}>
-        <Typography sx={{fontSize: '24px'}}>Todo List by Offiza</Typography>
+        <Typography sx={{fontSize: '24px'}}>{error}</Typography>
       </Box>
-      {/* <TodoList tasks={tasks} handleRemove={removeTask} handleUpdate={updateTask} /> */}
+      <TodoList tasks={tasks} handleRemove={removeTask} handleUpdate={updateTask} />
       <AddTask handleCreate={createTask} />
     </Box>
   )
