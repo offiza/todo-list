@@ -27,7 +27,7 @@ export const AddTask: FC<AddTaskProps> = ({ handleCreate }) => {
   }
 
   return (
-    <Box sx={{ position: 'absolute', zIndex: 3, bottom: '100px', right: '50px' }}>
+    <Box sx={{ position: 'fixed', zIndex: 3, bottom: '100px', right: '50px' }}>
       {!isOpen ?
         <IconButton sx={{ width: '64px', height: '64px' }} onClick={() => setIsOpen(!isOpen)}>
           <AddCircleOutlineIcon sx={{ width: '38px', height: '38px' }} />
