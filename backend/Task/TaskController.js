@@ -1,4 +1,3 @@
-import TaskSchema from "../DbSchema/TaskSchema.js";
 import TaskService from "./TaskService.js";
 
 class TaskController {
@@ -41,7 +40,7 @@ class TaskController {
 
   async deleteTask(req, res) {
     try {
-      const task = await TaskSchema.findByIdAndDelete(req.params.id);
+      const task = await TaskService.deleteTask(req.params.id);
       return res.json(task);
     } catch (e) {
       res.status(500).json(e.message);
