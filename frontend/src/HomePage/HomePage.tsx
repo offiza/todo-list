@@ -12,7 +12,7 @@ export const HomePage = () => {
       <Box sx={{margin: 'auto', textAlign: 'center', padding: '40px'}}>
         <Typography sx={{fontSize: '24px'}}>Todo List by Offiza</Typography>
       </Box>
-      <TodoList tasks={tasks} handleRemove={removeTask} handleUpdate={updateTask} />
+      {/* <TodoList tasks={tasks} handleRemove={removeTask} handleUpdate={updateTask} /> */}
       <AddTask handleCreate={createTask} />
     </Box>
   )
